@@ -18,8 +18,7 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{   
+	public function index()	{   
         
         $this->load->model('Songs_list','',TRUE); 
 		$songs = $this->Songs_list->get_all_songs();
@@ -30,6 +29,7 @@ class Welcome extends CI_Controller {
 	}
 
 	public function group_songs($data) {
+
 		//group the songs based on chapters
 		//give groups the chapter's name
 		$groups = array(
@@ -95,8 +95,6 @@ class Welcome extends CI_Controller {
 		//[7] = 134-145
 		//[8] = 146-153
 		//[9] = 154-169
-
-		//$data['groups'][0][] = $newdata;
 
 		foreach($data as $row) {
 			if($row['id'] <=17) {
